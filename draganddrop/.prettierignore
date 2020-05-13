@@ -2,6 +2,11 @@
 .idea/*
 .vscode/*
 
+#linter
+.prettierrc.yaml
+.sytlelintrc.json
+tslint.yaml
+
 # Others
 package.json
 package-lock.json
