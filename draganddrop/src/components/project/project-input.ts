@@ -3,7 +3,7 @@ import { Validator } from '../../shared/interface/validator.interface';
 import { autoBind } from '../../shared/util/autobind.util';
 import { ProjectState } from '../../state/project.state';
 
-export class ProjectInput extends ProjectComponent<HTMLDivElement, HTMLFormElement>{
+export class ProjectInput extends ProjectComponent<HTMLDivElement, HTMLFormElement> {
   public titleInputElement: HTMLInputElement;
   public descriptionInputElement: HTMLInputElement;
   public peopleInputElement: HTMLInputElement;
@@ -11,7 +11,7 @@ export class ProjectInput extends ProjectComponent<HTMLDivElement, HTMLFormEleme
   private projectState: ProjectState;
 
   constructor() {
-    super('project-input', 'app', true, 'user-input')
+    super('project-input', 'app', true, 'user-input');
 
     this.titleInputElement = this.element.querySelector('#title') as HTMLInputElement;
     this.descriptionInputElement = this.element.querySelector('#description') as HTMLInputElement;
@@ -43,11 +43,11 @@ export class ProjectInput extends ProjectComponent<HTMLDivElement, HTMLFormEleme
     }
 
     if (input.min != null && typeof input.value === 'number') {
-      isValid = isValid && input.value >= input.min
+      isValid = isValid && input.value >= input.min;
     }
 
     if (input.max != null && typeof input.value === 'number') {
-      isValid = isValid && input.value <= input.max
+      isValid = isValid && input.value <= input.max;
     }
 
     return isValid;
@@ -61,22 +61,22 @@ export class ProjectInput extends ProjectComponent<HTMLDivElement, HTMLFormEleme
     const titleValidator: Validator = {
       value: title,
       required: true,
-    }
+    };
 
     const descriptionValidator: Validator = {
       value: description,
       required: true,
       minLength: 5,
-    }
+    };
 
     const peopleValidator: Validator = {
       value: +peopleAmount,
       required: true,
       min: 1,
       max: 5,
-    }
+    };
 
-    if(
+    if (
       !this.validateInput(titleValidator) ||
       !this.validateInput(descriptionValidator) ||
       !this.validateInput(peopleValidator)

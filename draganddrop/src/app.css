@@ -23,11 +23,11 @@ label {
 
 input,
 textarea {
-  font: inherit;
-  padding: 0.2rem 0.4rem;
   width: 100%;
   max-width: 30rem;
+  padding: 0.2rem 0.4rem;
   border: 1px solid #ccc;
+  font: inherit;
 }
 
 input:focus,
@@ -37,12 +37,12 @@ textarea:focus {
 }
 
 button {
-  font: inherit;
-  background: #ff0062;
-  border: 1px solid #ff0062;
-  cursor: pointer;
-  color: white;
   padding: 0.75rem 1rem;
+  border: 1px solid #ff0062;
+  background: #ff0062;
+  color: white;
+  font: inherit;
+  cursor: pointer;
 }
 
 button:focus {
@@ -51,8 +51,8 @@ button:focus {
 
 button:hover,
 button:active {
-  background: #a80041;
   border-color: #a80041;
+  background: #a80041;
 }
 
 .projects {
@@ -61,11 +61,11 @@ button:active {
 }
 
 .projects header {
-  background: #ff0062;
-  height: 3.5rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  background: #ff0062;
 }
 
 #finished-projects {
@@ -82,21 +82,21 @@ button:active {
 }
 
 .projects ul {
-  list-style: none;
   margin: 0;
   padding: 1rem;
-}
-
-.projects li {
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.26);
-  padding: 1rem;
-  margin: 1rem;
-  background-color: white;
+  list-style: none;
 }
 
 .projects li h2 {
-  color: #ff0062;
   margin: 0.5rem 0;
+  color: #ff0062;
+}
+
+.projects li {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.26);
 }
 
 #finished-projects li h2 {

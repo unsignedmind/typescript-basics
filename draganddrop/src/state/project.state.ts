@@ -1,7 +1,7 @@
 import { State } from './generic/state';
 import { Project, ProjectStatus } from '../components/project/project.model';
 
-export class ProjectState extends State<Project>{
+export class ProjectState extends State<Project> {
   private projects: Project[] = [];
   private static instance: ProjectState;
 
@@ -25,14 +25,14 @@ export class ProjectState extends State<Project>{
       description: description,
       peopleAmount: peopleAmount,
       status: ProjectStatus.Active,
-    }
+    };
     this.projects.push(newProject);
     this.updateListeners();
   }
 
   public moveProject(projectId: string, newStatus: ProjectStatus) {
-    const project = this.projects.find(project => project.id === projectId);
-    if(project != null && project.status !== newStatus) {
+    const project = this.projects.find((project) => project.id === projectId);
+    if (project != null && project.status !== newStatus) {
       project.status = newStatus;
       this.updateListeners();
     }
@@ -40,7 +40,7 @@ export class ProjectState extends State<Project>{
 
   private updateListeners() {
     this.listeners.forEach((listener) => {
-      listener(this.projects.slice())
-    })
+      listener(this.projects.slice());
+    });
   }
 }
